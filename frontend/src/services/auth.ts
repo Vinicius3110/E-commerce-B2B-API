@@ -13,6 +13,14 @@ export interface UserProfile {
   companyName: string;
 }
 
+export interface RegisterPayload {
+  companyName: string;
+  document: string;
+  adminName: string;
+  email: string;
+  password: string;
+}
+
 export const authService = {
   login: async (email: string, password: string): Promise<LoginResponse> => {
     return apiRequest<LoginResponse>('/api/auth/login', {
@@ -21,7 +29,7 @@ export const authService = {
     });
   },
 
-  register: async (payload: any): Promise<LoginResponse> => {
+  register: async (payload: RegisterPayload): Promise<LoginResponse> => {
     return apiRequest<LoginResponse>('/api/auth/register', {
       method: 'POST',
       body: JSON.stringify(payload),
@@ -32,3 +40,4 @@ export const authService = {
     return apiRequest<UserProfile>(`/api/companies/${companyId}/users/${userId}`);
   },
 };
+
