@@ -1,0 +1,25 @@
+# Diretórios de build do .NET — contém arquivos compilados que não devem ser versionados
+# bin/ armazena os assemblies (.dll, .exe) e dependências copiadas
+**/bin/
+# obj/ armazena arquivos temporários de compilação e cache
+**/obj/
+
+# Arquivos de configuração do Visual Studio Code
+.vscode/
+
+# Arquivos de ambiente local (.env) — podem conter segredos (senhas, chaves)
+*.env
+
+# Arquivos de sistema operacional
+# Thumbs.db: cache de miniaturas do Windows Explorer
+Thumbs.db
+# .DS_Store: metadados de pastas do macOS Finder
+.DS_Store
+
+# Arquivos de backup e temporários
+*.swp
+*.tmp
+*~
+
+# Pacotes NuGet — são restaurados via dotnet restore, não precisam ser versionados
+**/packages/
