@@ -167,3 +167,18 @@
 .close-modal {
   width: 100%;
 }
+
+@media (max-width: 480px) {
+  .order-item-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .order-values {
+    align-items: flex-start;
+    width: 100%;
+    border-top: 1px dashed hsl(var(--border));
+    padding-top: 8px;
+  }
+}
