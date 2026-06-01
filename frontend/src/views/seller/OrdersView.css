@@ -1,0 +1,169 @@
+.seller-orders-view {
+  padding: 0 24px 40px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.empty-orders {
+  text-align: center;
+  color: hsl(var(--foreground) / 0.5);
+  padding: 40px !important;
+}
+
+.order-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.order-item-row:hover {
+  transform: translateY(-2px);
+  border-color: hsl(var(--accent-seller) / 0.4);
+  box-shadow: 0 8px 24px hsl(var(--accent-seller) / 0.1);
+}
+
+.order-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.order-id {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.order-seller {
+  font-size: 13px;
+  color: hsl(var(--foreground) / 0.6);
+}
+
+.order-values {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.order-total {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.status-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.pendente {
+  background-color: hsl(var(--status-pending) / 0.15);
+  color: hsl(var(--status-pending));
+  border: 1px solid hsl(var(--status-pending) / 0.2);
+}
+
+.status-badge.confirmado {
+  background-color: hsl(var(--status-confirmed) / 0.15);
+  color: hsl(var(--status-confirmed));
+  border: 1px solid hsl(var(--status-confirmed) / 0.2);
+}
+
+.status-badge.enviado {
+  background-color: hsl(var(--status-shipped) / 0.15);
+  color: hsl(var(--status-shipped));
+  border: 1px solid hsl(var(--status-shipped) / 0.2);
+}
+
+.status-badge.entregue {
+  background-color: hsl(var(--status-delivered) / 0.15);
+  color: hsl(var(--status-delivered));
+  border: 1px solid hsl(var(--status-delivered) / 0.2);
+}
+
+.status-badge.cancelado {
+  background-color: hsl(var(--status-cancelled) / 0.15);
+  color: hsl(var(--status-cancelled));
+  border: 1px solid hsl(var(--status-cancelled) / 0.2);
+}
+
+/* Modal and Action blocks */
+.order-modal {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.order-id-detail {
+  font-size: 14px;
+  color: hsl(var(--foreground) / 0.6);
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+
+.order-items-list-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: hsl(var(--input));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+.order-items-list-modal h4 {
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.modal-item-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: hsl(var(--foreground) / 0.8);
+}
+
+.total-row-modal {
+  border-top: 1px solid hsl(var(--border));
+  padding-top: 12px;
+  font-size: 16px;
+  margin-top: 6px;
+  color: hsl(var(--foreground));
+}
+
+.seller-action-block {
+  margin-bottom: 16px;
+}
+
+.update-status-btn {
+  width: 100%;
+  background-color: hsl(var(--accent-seller) / 1) !important;
+  color: white;
+  transition: var(--transition);
+}
+
+.update-status-btn:hover {
+  background-color: hsl(var(--accent-seller-hover) / 1) !important;
+  box-shadow: 0 4px 14px hsl(var(--accent-seller) / 0.4);
+}
+
+.close-modal {
+  width: 100%;
+}
