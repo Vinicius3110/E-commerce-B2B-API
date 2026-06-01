@@ -1,0 +1,48 @@
+:root {
+  /* Cores Base Escuras */
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  
+  --card: 240 10% 5.9%;
+  --card-foreground: 0 0% 98%;
+  
+  --border: 240 5.9% 15%;
+  --input: 240 5.9% 10%;
+  --input-focus: 262 83% 58%;
+  
+  /* Sotaques de Cores do Alternador */
+  --accent-buyer: 262 83% 58%;        /* Violeta */
+  --accent-buyer-hover: 262 83% 52%;
+  
+  --accent-seller: 142 71% 45%;       /* Esmeralda */
+  --accent-seller-hover: 142 71% 39%;
+  
+  /* Dinâmicas */
+  --primary: var(--accent-buyer);
+  --primary-hover: var(--accent-buyer-hover);
+  
+  /* Status Pedidos */
+  --status-pending: 38 92% 50%;
+  --status-confirmed: 217 91% 60%;
+  --status-shipped: 262 83% 58%;
+  --status-delivered: 142 71% 45%;
+  --status-cancelled: 0 84% 60%;
+  
+  /* Outros */
+  --font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --glass-bg: rgba(14, 14, 17, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+body.theme-buyer {
+  --primary: var(--accent-buyer);
+  --primary-hover: var(--accent-buyer-hover);
+}
+
+body.theme-seller {
+  --primary: var(--accent-seller);
+  --primary-hover: var(--accent-seller-hover);
+}
