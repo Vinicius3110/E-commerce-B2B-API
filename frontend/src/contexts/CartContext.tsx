@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
+/* eslint-disable react-refresh/only-export-components */
+import { createContext, useContext, useState, useCallback, useMemo } from 'react';
 import type { FC, ReactNode } from 'react';
 import { useAuth } from './AuthContext';
 
@@ -38,10 +39,12 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>([]);
   const { user } = useAuth();
 
-  // Reset carrinho ao trocar de conta
-  useEffect(() => {
+  // Reset carrinho ao trocar de conta (de forma síncrona durante render)
+  const [prevUserId, setPrevUserId] = useState<string | undefined>(user?.id);
+  if (user?.id !== prevUserId) {
+    setPrevUserId(user?.id);
     setItems([]);
-  }, [user?.id]);
+  }
 
   const addToCart = useCallback((product: {
     id: string;

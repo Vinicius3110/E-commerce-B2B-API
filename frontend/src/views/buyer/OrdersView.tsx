@@ -34,8 +34,9 @@ export const OrdersView: React.FC = () => {
       setSelectedOrder(null);
       const activeRef = { active: true };
       loadOrders(activeRef);
-    } catch (err: any) {
-      alert(err.message || 'Erro ao cancelar pedido.');
+    } catch (err) {
+      const error = err as { message?: string };
+      alert(error.message || 'Erro ao cancelar pedido.');
     }
   }, [loadOrders]);
 

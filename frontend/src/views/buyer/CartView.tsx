@@ -16,8 +16,9 @@ export const CartView: React.FC = () => {
       await ordersService.create(orderPayload);
       clearCart();
       alert('Pedido de compra criado com sucesso! O vendedor foi notificado.');
-    } catch (err: any) {
-      alert(err.message || 'Erro ao processar pedido.');
+    } catch (err) {
+      const error = err as { message?: string };
+      alert(error.message || 'Erro ao processar pedido.');
     }
   }, [items, clearCart]);
 

@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, useEffect, useContext, useCallback } from 'react';
 import type { FC, ReactNode } from 'react';
 import { authService } from '../services/auth';
@@ -43,26 +44,34 @@ const parseJwt = (token: string) => {
   }
 };
 
+const getUserFromStorage = (): UserProfile | null => {
+  const token = localStorage.getItem('access_token');
+  if (!token) return null;
+  const decoded = parseJwt(token);
+  if (!decoded) return null;
+  return {
+    id: decoded.sub,
+    name: decoded.name || 'Administrador',
+    email: decoded.email || '',
+    companyId: decoded.company_id,
+    companyName: decoded.company_name || 'Minha Empresa B2B',
+  };
+};
+
 export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<UserProfile | null>(null);
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(!!localStorage.getItem('access_token'));
+  const [user, setUser] = useState<UserProfile | null>(() => getUserFromStorage());
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => !!localStorage.getItem('access_token'));
   const [mode, setMode] = useState<'buyer' | 'seller'>('buyer');
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const loadUserFromToken = useCallback(() => {
-    const token = localStorage.getItem('access_token');
-    if (token) {
-      const decoded = parseJwt(token);
-      if (decoded) {
-        setUser({
-          id: decoded.sub,
-          name: decoded.name || 'Administrador',
-          email: decoded.email || '',
-          companyId: decoded.company_id,
-          companyName: decoded.company_name || 'Minha Empresa B2B',
-        });
-        setIsAuthenticated(true);
-      }
+    const u = getUserFromStorage();
+    if (u) {
+      setUser(u);
+      setIsAuthenticated(true);
+    } else {
+      setUser(null);
+      setIsAuthenticated(false);
     }
     setLoading(false);
   }, []);
@@ -75,12 +84,10 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    loadUserFromToken();
-    
     const handleExpired = () => logout();
     window.addEventListener('auth-expired', handleExpired);
     return () => window.removeEventListener('auth-expired', handleExpired);
-  }, [loadUserFromToken, logout]);
+  }, [logout]);
 
   useEffect(() => {
     document.body.className = mode === 'buyer' ? 'theme-buyer' : 'theme-seller';
