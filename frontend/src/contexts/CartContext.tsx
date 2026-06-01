@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
 import type { FC, ReactNode } from 'react';
 import { useAuth } from './AuthContext';
 
@@ -98,26 +98,34 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
     setItems([]);
   }, []);
 
-  const cartOriginalTotal = items.reduce((acc, item) => acc + item.price * item.qty, 0);
+  const cartOriginalTotal = useMemo(() => {
+    return items.reduce((acc, item) => acc + item.price * item.qty, 0);
+  }, [items]);
 
-  const cartTotal = items.reduce((acc, item) => {
-    const activePrice = item.b2bMinQty > 0 && item.qty >= item.b2bMinQty ? item.b2bPrice : item.price;
-    return acc + activePrice * item.qty;
-  }, 0);
+  const cartTotal = useMemo(() => {
+    return items.reduce((acc, item) => {
+      const activePrice = item.b2bMinQty > 0 && item.qty >= item.b2bMinQty ? item.b2bPrice : item.price;
+      return acc + activePrice * item.qty;
+    }, 0);
+  }, [items]);
 
-  const cartSavings = cartOriginalTotal - cartTotal;
+  const cartSavings = useMemo(() => {
+    return cartOriginalTotal - cartTotal;
+  }, [cartOriginalTotal, cartTotal]);
+
+  const contextValue = useMemo(() => ({
+    items,
+    addToCart,
+    removeFromCart,
+    updateQty,
+    clearCart,
+    cartTotal,
+    cartOriginalTotal,
+    cartSavings,
+  }), [items, addToCart, removeFromCart, updateQty, clearCart, cartTotal, cartOriginalTotal, cartSavings]);
 
   return (
-    <CartContext.Provider value={{
-      items,
-      addToCart,
-      removeFromCart,
-      updateQty,
-      clearCart,
-      cartTotal,
-      cartOriginalTotal,
-      cartSavings,
-    }}>
+    <CartContext.Provider value={contextValue}>
       {children}
     </CartContext.Provider>
   );

@@ -1,0 +1,168 @@
+.buyer-products-view {
+  padding: 0 24px 40px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: var(--transition);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: hsl(var(--primary) / 0.4);
+  box-shadow: 0 12px 40px hsl(var(--primary) / 0.2);
+}
+
+.seller-name {
+  font-size: 12px;
+  color: hsl(var(--foreground) / 0.5);
+  font-weight: 500;
+}
+
+.product-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  margin: 12px 0 8px 0;
+}
+
+.product-desc {
+  font-size: 13px;
+  color: hsl(var(--foreground) / 0.6);
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-bottom: 16px;
+}
+
+.price-matrix {
+  border-top: 1px solid hsl(var(--border));
+  padding-top: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.price-value {
+  font-weight: 600;
+}
+
+.b2b-row {
+  color: hsl(var(--accent-seller));
+  font-weight: 500;
+}
+
+.card-add-btn {
+  width: 100%;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.seller-name-modal {
+  font-size: 13px;
+  color: hsl(var(--foreground) / 0.5);
+}
+
+.desc-modal {
+  margin: 16px 0;
+  line-height: 1.6;
+  color: hsl(var(--foreground) / 0.8);
+}
+
+.modal-pricing {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.price-box {
+  flex: 1;
+  background-color: hsl(var(--input));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.price-box span {
+  font-size: 11px;
+  color: hsl(var(--foreground) / 0.5);
+}
+
+.price-box.b2b {
+  border-color: hsl(var(--accent-seller) / 0.3);
+  color: hsl(var(--accent-seller));
+}
+
+.cart-add-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.qty-picker {
+  display: inline-flex;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.qty-picker button {
+  border-radius: 0;
+  padding: 0 14px;
+  background-color: hsl(var(--input));
+}
+
+.qty-picker input {
+  border: none;
+  border-radius: 0;
+  width: 60px;
+  text-align: center;
+  background: none;
+}
+
+.close-modal {
+  width: 100%;
+}
