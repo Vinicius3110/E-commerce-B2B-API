@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EcommerceB2B.Domain\EcommerceB2B.Domain.csproj" />
-    <ProjectReference Include="..\EcommerceB2B.Application\EcommerceB2B.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

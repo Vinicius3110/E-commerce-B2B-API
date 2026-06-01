@@ -2,6 +2,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EcommerceB2B.Domain\EcommerceB2B.Domain.csproj" />
+    <ProjectReference Include="..\EcommerceB2B.Infrastructure\EcommerceB2B.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.15" />
   </ItemGroup>
 
   <PropertyGroup>
