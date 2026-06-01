@@ -1,0 +1,131 @@
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  border-radius: 0 0 var(--radius) var(--radius);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 24px;
+  border-top: none;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 24px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, hsl(var(--primary)), #00ffcc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-tenant-info .tenant-badge {
+  background-color: hsla(var(--primary), 0.1);
+  color: hsl(var(--primary));
+  border: 1px solid hsla(var(--primary), 0.2);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mode-toggle-container {
+  background-color: hsl(var(--input));
+  border: 1px solid hsl(var(--border));
+  border-radius: 30px;
+  display: flex;
+  padding: 3px;
+  position: relative;
+  width: 180px;
+  height: 38px;
+}
+
+.mode-toggle-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  color: hsla(var(--foreground), 0.6);
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: var(--transition);
+  padding: 0;
+}
+
+.mode-toggle-btn.active {
+  background-color: hsl(var(--primary));
+  color: #fff;
+  box-shadow: 0 4px 10px hsla(var(--primary), 0.3);
+}
+
+.cart-badge-wrapper {
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: hsl(var(--accent-buyer));
+  color: #fff;
+  border-radius: 50%;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.user-profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: hsla(var(--primary), 0.2);
+  color: hsl(var(--primary));
+  border: 1px solid hsl(var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: hsla(var(--foreground), 0.5);
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.logout-btn:hover {
+  color: hsl(var(--status-cancelled));
+}
