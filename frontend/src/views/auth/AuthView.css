@@ -1,0 +1,70 @@
+.auth-view-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.15) 0%, rgba(0, 0, 0, 0) 50%),
+              radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.15) 0%, rgba(0, 0, 0, 0) 50%),
+              hsl(var(--background));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.auth-card {
+  max-width: 440px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px !important;
+}
+
+.auth-header {
+  text-align: center;
+}
+
+.auth-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  margin-top: 8px;
+}
+
+.auth-header p {
+  font-size: 13px;
+  color: hsla(var(--foreground), 0.5);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 20px;
+}
+
+.auth-switcher {
+  text-align: center;
+  border-top: 1px solid hsl(var(--border));
+  padding-top: 16px;
+}
+
+.switch-btn {
+  background: none;
+  border: none;
+  color: hsl(var(--primary));
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.switch-btn:hover {
+  text-decoration: underline;
+}

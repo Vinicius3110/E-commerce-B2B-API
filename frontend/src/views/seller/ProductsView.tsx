@@ -38,13 +38,12 @@ export const ProductsViewSeller: React.FC = () => {
       }
     };
 
-    setLoading(true);
     fetchProducts();
 
     return () => {
       active = false;
     };
-  }, [user?.companyId, refreshTrigger]);
+  }, [user, user?.companyId, refreshTrigger]);
 
   const handleToggleActive = useCallback(async (product: Product) => {
     try {
@@ -61,8 +60,9 @@ export const ProductsViewSeller: React.FC = () => {
         });
       }
       setRefreshTrigger((prev) => prev + 1);
-    } catch (err: any) {
-      alert(err.message || 'Erro ao alternar status do produto.');
+    } catch (err: unknown) {
+      const error = err as Error;
+      alert(error.message || 'Erro ao alternar status do produto.');
     }
   }, []);
 
@@ -86,8 +86,9 @@ export const ProductsViewSeller: React.FC = () => {
       setB2bMinQty('');
       setB2bPrice('');
       setRefreshTrigger((prev) => prev + 1);
-    } catch (err: any) {
-      alert(err.message || 'Erro ao cadastrar produto.');
+    } catch (err: unknown) {
+      const error = err as Error;
+      alert(error.message || 'Erro ao cadastrar produto.');
     }
   }, [name, description, price, b2bMinQty, b2bPrice]);
 

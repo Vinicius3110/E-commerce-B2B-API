@@ -26,7 +26,6 @@ export const OrdersViewSeller: React.FC = () => {
       }
     };
 
-    setLoading(true);
     fetchOrders();
 
     return () => {
@@ -47,8 +46,9 @@ export const OrdersViewSeller: React.FC = () => {
       alert(`Status do pedido atualizado para: ${nextStatus}`);
       setSelectedOrder(null);
       setRefreshTrigger((prev) => prev + 1);
-    } catch (err: any) {
-      alert(err.message || 'Erro ao transicionar pedido.');
+    } catch (err: unknown) {
+      const error = err as Error;
+      alert(error.message || 'Erro ao transicionar pedido.');
     }
   }, []);
 
