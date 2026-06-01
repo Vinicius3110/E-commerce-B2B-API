@@ -1,0 +1,290 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\E-commerce B2B API\\src\\EcommerceB2B.Api\\EcommerceB2B.Api.csproj": {}
+  },
+  "projects": {
+    "E:\\E-commerce B2B API\\src\\EcommerceB2B.Api\\EcommerceB2B.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Api\\EcommerceB2B.Api.csproj",
+        "projectName": "EcommerceB2B.Api",
+        "projectPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Api\\EcommerceB2B.Api.csproj",
+        "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
+        "outputPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "framework": "net9.0",
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "E:\\E-commerce B2B API\\src\\EcommerceB2B.Application\\EcommerceB2B.Application.csproj": {
+                "projectPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Application\\EcommerceB2B.Application.csproj"
+              },
+              "E:\\E-commerce B2B API\\src\\EcommerceB2B.Domain\\EcommerceB2B.Domain.csproj": {
+                "projectPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Domain\\EcommerceB2B.Domain.csproj"
+              },
+              "E:\\E-commerce B2B API\\src\\EcommerceB2B.Infrastructure\\EcommerceB2B.Infrastructure.csproj": {
+                "projectPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Infrastructure\\EcommerceB2B.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "framework": "net9.0",
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.16, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\E-commerce B2B API\\src\\EcommerceB2B.Application\\EcommerceB2B.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Application\\EcommerceB2B.Application.csproj",
+        "projectName": "EcommerceB2B.Application",
+        "projectPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Application\\EcommerceB2B.Application.csproj",
+        "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
+        "outputPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "framework": "net9.0",
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "E:\\E-commerce B2B API\\src\\EcommerceB2B.Domain\\EcommerceB2B.Domain.csproj": {
+                "projectPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Domain\\EcommerceB2B.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "framework": "net9.0",
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\E-commerce B2B API\\src\\EcommerceB2B.Domain\\EcommerceB2B.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Domain\\EcommerceB2B.Domain.csproj",
+        "projectName": "EcommerceB2B.Domain",
+        "projectPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Domain\\EcommerceB2B.Domain.csproj",
+        "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
+        "outputPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "framework": "net9.0",
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "framework": "net9.0",
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\E-commerce B2B API\\src\\EcommerceB2B.Infrastructure\\EcommerceB2B.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Infrastructure\\EcommerceB2B.Infrastructure.csproj",
+        "projectName": "EcommerceB2B.Infrastructure",
+        "projectPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Infrastructure\\EcommerceB2B.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
+        "outputPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "framework": "net9.0",
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "E:\\E-commerce B2B API\\src\\EcommerceB2B.Application\\EcommerceB2B.Application.csproj": {
+                "projectPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Application\\EcommerceB2B.Application.csproj"
+              },
+              "E:\\E-commerce B2B API\\src\\EcommerceB2B.Domain\\EcommerceB2B.Domain.csproj": {
+                "projectPath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Domain\\EcommerceB2B.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "framework": "net9.0",
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

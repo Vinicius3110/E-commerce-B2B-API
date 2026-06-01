@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "NBbnsDSlnRA=",
+  "success": true,
+  "projectFilePath": "E:\\E-commerce B2B API\\src\\EcommerceB2B.Api\\EcommerceB2B.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vinic\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.16\\microsoft.aspnetcore.openapi.9.0.16.nupkg.sha512",
+    "C:\\Users\\vinic\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

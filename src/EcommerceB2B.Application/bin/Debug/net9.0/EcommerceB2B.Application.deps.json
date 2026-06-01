@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "EcommerceB2B.Application/1.0.0": {
+        "dependencies": {
+          "EcommerceB2B.Domain": "1.0.0"
+        },
+        "runtime": {
+          "EcommerceB2B.Application.dll": {}
+        }
+      },
+      "EcommerceB2B.Domain/1.0.0": {
+        "runtime": {
+          "EcommerceB2B.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EcommerceB2B.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EcommerceB2B.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

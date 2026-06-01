@@ -1,0 +1,17 @@
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\bin\Debug\net9.0\EcommerceB2B.Infrastructure.deps.json
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\bin\Debug\net9.0\EcommerceB2B.Infrastructure.dll
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\bin\Debug\net9.0\EcommerceB2B.Infrastructure.pdb
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\bin\Debug\net9.0\EcommerceB2B.Application.dll
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\bin\Debug\net9.0\EcommerceB2B.Domain.dll
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\bin\Debug\net9.0\EcommerceB2B.Domain.pdb
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\bin\Debug\net9.0\EcommerceB2B.Application.pdb
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\obj\Debug\net9.0\EcommerceB2B.Infrastructure.csproj.AssemblyReference.cache
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\obj\Debug\net9.0\EcommerceB2B.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\obj\Debug\net9.0\EcommerceB2B.Infrastructure.AssemblyInfoInputs.cache
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\obj\Debug\net9.0\EcommerceB2B.Infrastructure.AssemblyInfo.cs
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\obj\Debug\net9.0\EcommerceB2B.Infrastructure.csproj.CoreCompileInputs.cache
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\obj\Debug\net9.0\Ecommerc.2CAC2503.Up2Date
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\obj\Debug\net9.0\EcommerceB2B.Infrastructure.dll
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\obj\Debug\net9.0\refint\EcommerceB2B.Infrastructure.dll
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\obj\Debug\net9.0\EcommerceB2B.Infrastructure.pdb
+E:\E-commerce B2B API\src\EcommerceB2B.Infrastructure\obj\Debug\net9.0\ref\EcommerceB2B.Infrastructure.dll
