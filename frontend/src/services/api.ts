@@ -6,9 +6,9 @@ interface RequestOptions extends RequestInit {
 
 export class ApiError extends Error {
   status: number;
-  body?: any;
+  body?: unknown;
 
-  constructor(status: number, message: string, body?: any) {
+  constructor(status: number, message: string, body?: unknown) {
     super(message);
     this.status = status;
     this.body = body;
@@ -42,7 +42,7 @@ async function refreshAccessToken(): Promise<string | null> {
 }
 
 export async function apiRequest<T>(endpoint: string, options: RequestOptions = {}): Promise<T> {
-  let token = localStorage.getItem('access_token');
+  const token = localStorage.getItem('access_token');
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     ...(options.headers as Record<string, string>),
@@ -79,13 +79,14 @@ export async function apiRequest<T>(endpoint: string, options: RequestOptions = 
   }
 
   if (!response.ok) {
-    let body: any;
+    let body: unknown;
     try {
       body = await response.json();
     } catch {
       body = null;
     }
-    throw new ApiError(response.status, body?.message || 'Erro na requisição à API', body);
+    const message = (body as { message?: string })?.message || 'Erro na requisição à API';
+    throw new ApiError(response.status, message, body);
   }
 
   if (response.status === 204) {

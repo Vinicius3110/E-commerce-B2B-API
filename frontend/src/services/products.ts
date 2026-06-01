@@ -12,6 +12,15 @@ export interface Product {
   isActive: boolean;
 }
 
+export interface CreateProductPayload {
+  name: string;
+  description?: string;
+  price: number;
+  b2bMinQty: number;
+  b2bPrice: number;
+  isActive: boolean;
+}
+
 export const productsService = {
   listAll: async (params?: Record<string, string>): Promise<Product[]> => {
     const res = await apiRequest<{ items: Product[] }>('/api/products', { params });
@@ -22,14 +31,14 @@ export const productsService = {
     return apiRequest<Product>(`/api/products/${id}`);
   },
 
-  create: async (payload: any): Promise<Product> => {
+  create: async (payload: CreateProductPayload): Promise<Product> => {
     return apiRequest<Product>('/api/products', {
       method: 'POST',
       body: JSON.stringify(payload),
     });
   },
 
-  update: async (id: string, payload: any): Promise<Product> => {
+  update: async (id: string, payload: CreateProductPayload): Promise<Product> => {
     return apiRequest<Product>(`/api/products/${id}`, {
       method: 'PUT',
       body: JSON.stringify(payload),
