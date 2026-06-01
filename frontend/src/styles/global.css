@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap');
-
-* {
+/* Reset Robusto e Moderno */
+*, ::before, ::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,7 +11,7 @@ body {
   font-family: var(--font-family);
   min-height: 100vh;
   overflow-x: hidden;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 input, select, textarea {
@@ -24,12 +23,15 @@ input, select, textarea {
   font-family: inherit;
   font-size: 14px;
   outline: none;
-  transition: var(--transition);
+  width: 100%; /* Garante fluidez responsiva por padrão */
+  max-width: 100%;
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 input:focus, select:focus, textarea:focus {
   border-color: hsl(var(--primary));
-  box-shadow: 0 0 0 2px hsla(var(--primary), 0.2);
+  /* Correção de sintaxe para CSS Color Module Level 4 */
+  box-shadow: 0 0 0 2px hsl(var(--primary) / 0.20);
 }
 
 button {
@@ -38,12 +40,13 @@ button {
   padding: 10px 20px;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition);
   border: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  /* Transições específicas de propriedades para melhor desempenho */
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button.btn-primary {
@@ -63,7 +66,8 @@ button.btn-secondary {
 }
 
 button.btn-secondary:hover {
-  background-color: hsla(var(--foreground), 0.05);
+  /* Correção de sintaxe para CSS Color Module Level 4 */
+  background-color: hsl(var(--foreground) / 0.05);
 }
 
 button:active {
