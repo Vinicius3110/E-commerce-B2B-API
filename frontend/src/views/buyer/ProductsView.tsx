@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { productsService } from '../../services/products';
 import type { Product } from '../../services/products';
 import { useCart } from '../../contexts/CartContext';
@@ -12,17 +12,29 @@ export const ProductsView: React.FC = () => {
   const { addToCart } = useCart();
 
   useEffect(() => {
+    let active = true;
     productsService.listAll()
-      .then((data) => setProducts(data.filter((p) => p.isActive)))
-      .finally(() => setLoading(false));
+      .then((data) => {
+        if (active) {
+          setProducts(data.filter((p) => p.isActive));
+        }
+      })
+      .finally(() => {
+        if (active) {
+          setLoading(false);
+        }
+      });
+    return () => {
+      active = false;
+    };
   }, []);
 
-  const handleAddToCart = (product: Product) => {
+  const handleAddToCart = useCallback((product: Product) => {
     addToCart(product, qty);
     setSelectedProduct(null);
     setQty(1);
     alert('Produto adicionado ao carrinho!');
-  };
+  }, [addToCart, qty]);
 
   if (loading) return <div className="loading">Carregando catálogo corporativo...</div>;
 

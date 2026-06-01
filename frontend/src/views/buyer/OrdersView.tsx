@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { ordersService } from '../../services/orders';
 import type { Order } from '../../services/orders';
 import './OrdersView.css';
@@ -8,27 +8,36 @@ export const OrdersView: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
 
-  const loadOrders = () => {
+  const loadOrders = useCallback((activeRef: { active: boolean }) => {
     ordersService.list('buyer')
-      .then((data) => setOrders(data))
-      .finally(() => setLoading(false));
-  };
-
-  useEffect(() => {
-    loadOrders();
+      .then((data) => {
+        if (activeRef.active) setOrders(data);
+      })
+      .finally(() => {
+        if (activeRef.active) setLoading(false);
+      });
   }, []);
 
-  const handleCancelOrder = async (orderId: string) => {
+  useEffect(() => {
+    const activeRef = { active: true };
+    loadOrders(activeRef);
+    return () => {
+      activeRef.active = false;
+    };
+  }, [loadOrders]);
+
+  const handleCancelOrder = useCallback(async (orderId: string) => {
     if (!confirm('Deseja realmente cancelar este pedido?')) return;
     try {
       await ordersService.updateStatus(orderId, 'Cancelado');
       alert('Pedido cancelado com sucesso!');
       setSelectedOrder(null);
-      loadOrders();
+      const activeRef = { active: true };
+      loadOrders(activeRef);
     } catch (err: any) {
       alert(err.message || 'Erro ao cancelar pedido.');
     }
-  };
+  }, [loadOrders]);
 
   if (loading) return <div className="loading">Carregando pedidos de compra...</div>;
 

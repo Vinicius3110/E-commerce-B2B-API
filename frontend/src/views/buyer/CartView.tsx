@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useCart } from '../../contexts/CartContext';
 import { ordersService } from '../../services/orders';
 import './CartView.css';
@@ -6,7 +6,7 @@ import './CartView.css';
 export const CartView: React.FC = () => {
   const { items, updateQty, removeFromCart, cartTotal, cartOriginalTotal, cartSavings, clearCart } = useCart();
 
-  const handleCheckout = async () => {
+  const handleCheckout = useCallback(async () => {
     if (items.length === 0) return;
     try {
       const orderPayload = items.map((item) => ({
@@ -19,7 +19,7 @@ export const CartView: React.FC = () => {
     } catch (err: any) {
       alert(err.message || 'Erro ao processar pedido.');
     }
-  };
+  }, [items, clearCart]);
 
   if (items.length === 0) {
     return (
