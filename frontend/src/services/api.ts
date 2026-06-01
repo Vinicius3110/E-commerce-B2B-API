@@ -5,8 +5,13 @@ interface RequestOptions extends RequestInit {
 }
 
 export class ApiError extends Error {
-  constructor(public status: number, message: string, public body?: any) {
+  status: number;
+  body?: any;
+
+  constructor(status: number, message: string, body?: any) {
     super(message);
+    this.status = status;
+    this.body = body;
   }
 }
 
